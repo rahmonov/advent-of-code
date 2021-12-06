@@ -1,5 +1,4 @@
-from collections import Counter, defaultdict
-from copy import deepcopy
+from collections import Counter
 from pathlib import Path
 
 
@@ -20,7 +19,7 @@ def calculate_part1(days_arr, days=80):
             else:
                 new_days_left[i - 1] += days_left[i]
 
-        days_left = deepcopy(new_days_left)
+        days_left = new_days_left
 
     return sum(days_left.values())
 
