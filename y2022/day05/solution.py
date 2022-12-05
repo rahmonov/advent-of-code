@@ -35,8 +35,8 @@ def _parse_move(line):
     return int(parts[1]), int(parts[3]) - 1, int(parts[5]) - 1
 
 
-def _get_nth_crate(stacks, n):
-    return stacks[n * 3 + n + 1]
+def _get_nth_crate(line, n):
+    return line[n * 3 + n + 1]
 
 
 def _get_total_stacks(lines):
@@ -73,9 +73,9 @@ def solve_part_two(stacks, moves):
 
 if __name__ == "__main__":
     stacks, moves = parse(filename="input.txt")
-
     part_one_answer = solve_part_one(stacks, moves)
     print(f"Part One Answer: {part_one_answer}")
 
+    stacks, moves = parse(filename="input.txt")
     part_two_answer = solve_part_two(stacks, moves)
     print(f"Part Two Answer: {part_two_answer}")
